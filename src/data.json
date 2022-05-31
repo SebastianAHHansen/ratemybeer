@@ -1,0 +1,40 @@
+[
+        {
+            "type": "Norrlands Guld",
+            "category": "Lager",
+            "rating": 5,
+            "id": 1
+        },
+        {
+            "type": "Poppels Passion",
+            "category": "IPA, APA, DIPA",
+            "rating": 10,
+            "id": 2
+        },
+        {
+            "type": "Eriksberg Karaktär",
+            "category": "Lager",
+            "rating": 5.5,
+            "id": 3
+        },
+        {
+            "type": "Dugges Tropic Thunder",
+            "category": "Sour Beer",
+            "rating": 9,
+            "id": 4
+        },
+        {
+            "type": "Pilsner Urquell",
+            "category": "Lager",
+            "rating": 6,
+            "id": 5
+        },
+
+
+        {
+            "type": "Corona Cero",
+            "category": "Lager",
+            "rating": 9,
+            "id": 6
+        }
+    ]

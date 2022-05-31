@@ -1,38 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Gluten&family=Licorice&display=swap');
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* -------------- Body Styling --------------- */
+body {
+  margin: 0;
+  padding: 20px 20px 100px 20px;
+  font-family: 'Gluten', cursive;
+  background-color: #2b2d42;
+  background: url('https://images.unsplash.com/photo-1623274545361-63e9d95e4643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+hr {
+  width: 30%;
+}
+
+/* -------------- H1, H3, H4, H5 Styling --------------- */
+h1 {
+  color: gold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: gold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+h4 {
+  color: gold;
+}
+h5 {
+  color: goldenrod;
+  text-transform: uppercase;
+}
+
+/* -------------- Table Styling --------------- */
+.th-beer,
+.td-beer {
+  flex: 5;
+}
+.th-category,
+.td-category {
+  flex: 5;
+}
+.th-rating,
+.td-rating {
+  flex: 1;
+}
+.th-edit,
+.td-edit {
+  flex: 1;
+}
+.th-delete,
+.td-delete {
+  flex: 1;
+}
+
+.table,
+thead,
+tr {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #2b2d42;
 }
 
-.App-link {
-  color: #61dafb;
+.table td,
+.table th {
+  padding: 0.55em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table th {
+  color: #fff;
+  font-size: larger;
+  background-color: #2b2d42;
+}
+
+.table td {
+  font-size: large;
+  text-transform: uppercase;
+}
+
+.tr-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+/* -------------- Input Forms Styling --------------- */
+.rateBeer input,
+.updateBeer input,
+.searchBeer input {
+  padding: 15px;
+  border-radius: 20px;
+  width: 390px;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-family: 'Gluten', cursive;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 2px black;
+  text-align: center;
+  background-color: honeydew;
+  margin-bottom: 5px;
+}
+
+/* -------------- Content Div Styling --------------- */
+.rateBeer,
+.updateBeer,
+.searchBeer,
+.downloadJson {
+  margin-top: 20px;
+}
+
+/* -------------- Buttons Styling --------------- */
+button {
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: none;
+  background: gold;
+  color: black;
+  font-size: large;
+  letter-spacing: 1px;
+  transition: 300ms ease;
+  text-decoration: none;
+  font-family: 'Gluten', cursive;
+}
+
+button:hover {
+  transition: 300ms ease;
+  background: goldenrod;
+  color: black;
+  box-shadow: 0px 0px 3px 4px goldenrod;
 }
