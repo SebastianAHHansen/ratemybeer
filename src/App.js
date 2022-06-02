@@ -49,9 +49,9 @@ function Beers() {
         if (beer && category && rating <=10 && rating >0) {
             //Create New Object
             let newBeer = {
-                // uuidv1 creates unique ID
+                // uuidv1 extension creates unique ID
                 "id": uuidv1(),
-                "type": beer,
+                "beer": beer,
                 "category": category,
                 "rating": rating
             }
@@ -89,9 +89,9 @@ function Beers() {
     };
 
     //Populate Beer
-    const populateBeer = (key, type, category, rating) => {
+    const populateBeer = (key, beer, category, rating) => {
         setUpdatedID(key);
-        setUpdatedBeer(type);
+        setUpdatedBeer(beer);
         setUpdatedCategory(category);
         setUpdatedRating(rating);
     };
@@ -101,7 +101,7 @@ function Beers() {
         //Populate post info from temp state and prepare new object for changed post
         let editBeer = {
             "id": updatedID,
-            "type": updatedBeer,
+            "beer": updatedBeer,
             "category": updatedCategory,
             "rating": updatedRating
         }
@@ -124,7 +124,7 @@ function Beers() {
     //Write to JSON File 
     const saveJson = (beers) => {
         //API URL // End Point from Node Server / Express Server
-        const url = 'http://localhost:5000/beers'
+        const url = 'http://localhost:8080/beers'
         axios.post(url, beers)
         .then(response => {
         });
@@ -133,7 +133,7 @@ function Beers() {
     //Download JSON File
     const downloadJsonFile = jsonData => {
         const fileData = JSON.stringify(jsonData);
-        const blob = new Blob([fileData], {type: "text/plain"});
+        const blob = new Blob([fileData], {beer: "text/plain"});
         const url = URL.createObjectURL(blob);
         //Creates Link
         const link = document.createElement('a');
@@ -250,7 +250,7 @@ function Beers() {
 
         {/* Filter() - Search  */}
         { data ? data.filter((beer)=>{
-            return beer.type.toLowerCase().includes(searching) || beer.category.toLowerCase().includes(searching);
+            return beer.beer.toLowerCase().includes(searching) || beer.category.toLowerCase().includes(searching);
         
         // Map() Database
         }).map(beers => {
@@ -262,13 +262,13 @@ function Beers() {
                                 <thead>
                                     <tr>
                                     {/* Table Data */}
-                                    <td className="td-beer" >{beers.type}</td>
+                                    <td className="td-beer" >{beers.beer}</td>
                                     <td className="td-category" >{beers.category}</td>
                                     <td className="td-rating" >{beers.rating}/10</td>
                                     {/* Buttons */}
                                     <td className="td-edit" >
                                         {/* Edit Button */}
-                                        <button onClick = { () => populateBeer(beers.id, beers.type, beers.category, beers.rating)}><FiEdit3/></button>
+                                        <button onClick = { () => populateBeer(beers.id, beers.beer, beers.category, beers.rating)}><FiEdit3/></button>
                                     </td>
                                     <td className="td-delete" >
                                         {/* Delete Button */}

@@ -17,6 +17,7 @@ app.get('/', (req, res) => res.status(200).send({
     message: "Server is running..."
 }));
 
+
 const WriteTextToFileAsync = async(contentToWrite) => {
     fs.writeFile('./src/data.json', contentToWrite, (error) =>  {
         console.log(contentToWrite);
@@ -30,6 +31,7 @@ const WriteTextToFileAsync = async(contentToWrite) => {
 
 // Declare Post / Write route to accept incoming request with data
 app.post('/beers', async (req, res, next) => {
+    //Takes the body from incoming requests by using req.body and converts into a string 
     const requestContent = JSON.stringify(req.body);
     await WriteTextToFileAsync(requestContent)
 });
@@ -39,7 +41,7 @@ app.use((req, res, next) => res.status(404).send({
     message: "Could not find requested route"
 }));
 
-//Run server
+// Run server
 app.listen(PORT, () => {
     console.log(
         `
