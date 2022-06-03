@@ -3,7 +3,7 @@ A React school project that includes full CRUD functionality to a local JSON Dat
 
 ## Start the Project
 Step 1: Install packages
-npm install axios body-parser cors express react-icons uuid
+`npm install axios body-parser cors express react-icons uuid`
 
 Step 2: Install packages -dev
 `npm install --dev concurrently morgan nodemon`
